@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.mdl-card__supporting-text {
+  padding-bottom: 48px;
+}
+
+.mdl-card__actions.mdl-card--border {
+  position: absolute;
+  bottom: 0;
+}
