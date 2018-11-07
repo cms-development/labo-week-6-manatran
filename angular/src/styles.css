@@ -7,3 +7,50 @@
   position: absolute;
   bottom: 0;
 }
+
+.introduction {
+  background-image: url("https://images.ecosia.org/qlDEVcJe62UBv9MDse8r7l8eN48=/0x390/smart/https%3A%2F%2Fwww.abscis-architecten.be%2Fuploads%2Fimages%2F0-0%2Fbb11f0ae9ad7ad78ab01827fb9cf7175120.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.introduction .introduction-text {
+  z-index: 2;
+}
+
+.introduction::after {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(33, 150, 243, .666);
+}
+
+.gh-button {
+  margin-top: 32px;
+}
+
+.gh-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  margin-top: 1px;
+}
+
+.gh-link i {
+  font-size: 14px;
+  padding-left: 8px;
+}

@@ -7,10 +7,9 @@
     <div class="mdl-card__supporting-text">
       <ul class="demo-list-two mdl-list">
 
-        <li class="mdl-list__item mdl-list__item--two-line" *ngFor="let course of courses">
+        <li class="mdl-list__item" *ngFor="let course of courses">
           <span class="mdl-list__item-primary-content">
-            <span>{{course.attributes.name}}</span>
-            <span class="mdl-list__item-sub-title">Frederick Roegiers</span>
+            {{course.attributes.name}}
           </span>
           <span class="mdl-list__item-secondary-content">
             <a class="mdl-list__item-secondary-action" routerLink="/courses/{{course.id}}"><i class="material-icons">list_alt</i></a>
