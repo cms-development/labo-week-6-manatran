@@ -5,12 +5,12 @@ import axios from 'axios';
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService {
-  private fetchURL = 'http://localhost/jsonapi/student/student';
+export class CourseService {
+  private fetchURL = 'http://localhost/jsonapi/course/course';
 
   constructor() {}
 
-  public async getStudents<T>(): Promise<T> {
+  public async getCourses<T>(): Promise<T> {
     try {
       const res = await axios.request<T>({
         method: 'get',
@@ -22,11 +22,11 @@ export class StudentService {
     }
   }
 
-  public async getStudent<T>(id: string): Promise<T> {
+  public async getCourse<T>(id: string): Promise<T> {
     try {
       const res = await axios.request<T>({
         method: 'get',
-        url: `${this.fetchURL}/${id}?include=field_courses`
+        url: `${this.fetchURL}/${id}?include=field_instructor`
       });
       return res.data;
     } catch (error) {
@@ -42,3 +42,4 @@ export class StudentService {
     };
   }
 }
+

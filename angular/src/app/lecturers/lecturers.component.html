@@ -1,3 +1,27 @@
-<p>
-  lecturers works!
-</p>
+<section class="mdl-grid" style="justify-content:center;margin-top:64px;">
+
+  <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--9-col">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Lecturers</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <ul class="demo-list-two mdl-list">
+
+        <li class="mdl-list__item" *ngFor="let lecturer of lecturers">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons  mdl-list__item-avatar">person</i>
+            {{lecturer.attributes.field_first_name}} {{lecturer.attributes.name}}
+          </span>
+          <span class="mdl-list__item-secondary-content">
+            <a class="mdl-list__item-secondary-action" routerLink="/lecturers/{{lecturer.id}}"><i class="material-icons">school</i></a>
+          </span>
+        </li>
+
+      </ul>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" routerLink="/">Homepage</a>
+    </div>
+  </div>
+
+</section>
