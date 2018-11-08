@@ -1,8 +1,8 @@
 <div class="introduction">
   <div class="introduction-text">
-    <div class="mdl-typography--display-2 mdl-typography--font-light mdl-color-text--white">Welcome to the University
+    <div class="mdl-typography--display-2 mdl-typography--font-thin mdl-color-text--white">Welcome to the University
       Homepage</div>
-    <p class="mdl-typography--headline mdl-typography--font-thin mdl-color-text--white">
+    <p class="mdl-typography--headline mdl-typography--font-light mdl-color-text--white">
       Built with Drupal and Angular by Manaus Transez
     </p>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent gh-button">
@@ -23,12 +23,12 @@
     <div class="mdl-card__supporting-text">
       <ul class="demo-list-two mdl-list">
 
-        <li class="mdl-list__item">
+        <li class="mdl-list__item" *ngFor="let course of courses">
           <span class="mdl-list__item-primary-content">
-            CMS Development
+            {{course.attributes.name}}
           </span>
           <span class="mdl-list__item-secondary-content">
-            <a class="mdl-list__item-secondary-action" routerLink="/courses/id"><i class="material-icons">list_alt</i></a>
+            <a class="mdl-list__item-secondary-action" routerLink="/courses/{{course.id}}"><i class="material-icons">list_alt</i></a>
           </span>
         </li>
 
@@ -47,13 +47,13 @@
     <div class="mdl-card__supporting-text">
       <ul class="demo-list-two mdl-list">
 
-        <li class="mdl-list__item">
+        <li class="mdl-list__item" *ngFor="let lecturer of lecturers">
           <span class="mdl-list__item-primary-content">
             <i class="material-icons  mdl-list__item-avatar">person</i>
-            Frederick Roegiers
+            {{lecturer.attributes.field_first_name}} {{lecturer.attributes.name}}
           </span>
           <span class="mdl-list__item-secondary-content">
-            <a class="mdl-list__item-secondary-action" routerLink="/lecturers/id"><i class="material-icons">school</i></a>
+            <a class="mdl-list__item-secondary-action" routerLink="/lecturers/{{lecturer.id}}"><i class="material-icons">school</i></a>
           </span>
         </li>
 
@@ -73,13 +73,13 @@
     <div class="mdl-card__supporting-text">
       <ul class="demo-list-two mdl-list">
 
-        <li class="mdl-list__item">
+        <li class="mdl-list__item" *ngFor="let student of students">
           <span class="mdl-list__item-primary-content">
             <i class="material-icons  mdl-list__item-avatar">person</i>
-            Manaus Transez
+            {{student.attributes.field_first_name}} {{student.attributes.name}}
           </span>
           <span class="mdl-list__item-secondary-content">
-            <a class="mdl-list__item-secondary-action" routerLink="/students/id"><i class="material-icons">child_friendly</i></a>
+            <a class="mdl-list__item-secondary-action" routerLink="/students/{{student.id}}"><i class="material-icons">child_friendly</i></a>
           </span>
         </li>
 
