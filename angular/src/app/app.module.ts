@@ -7,6 +7,7 @@ import { StudentsComponent } from './students/students.component';
 import { LecturersComponent } from './lecturers/lecturers.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OverviewComponent } from './overview/overview.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OverviewComponent } from './overview/overview.component';
     CoursesComponent,
     StudentsComponent,
     LecturersComponent,
-    OverviewComponent
+    OverviewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
