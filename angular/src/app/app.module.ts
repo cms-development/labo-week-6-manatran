@@ -8,6 +8,9 @@ import { LecturersComponent } from './lecturers/lecturers.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { LoginComponent } from './login/login.component';
+import { StudentDetailComponent } from './students/student-detail/student-detail.component';
+import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
+import { LecturerDetailComponent } from './lecturers/lecturer-detail/lecturer-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { LoginComponent } from './login/login.component';
     StudentsComponent,
     LecturersComponent,
     OverviewComponent,
-    LoginComponent
+    LoginComponent,
+    StudentDetailComponent,
+    CourseDetailComponent,
+    LecturerDetailComponent
   ],
   imports: [
     BrowserModule,
