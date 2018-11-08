@@ -12,7 +12,7 @@
   background-image: url("https://images.ecosia.org/qlDEVcJe62UBv9MDse8r7l8eN48=/0x390/smart/https%3A%2F%2Fwww.abscis-architecten.be%2Fuploads%2Fimages%2F0-0%2Fbb11f0ae9ad7ad78ab01827fb9cf7175120.jpg");
   background-position: center;
   background-size: cover;
-  padding: 64px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +40,7 @@
 }
 
 .gh-button {
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
 .gh-link {
