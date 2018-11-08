@@ -24,6 +24,10 @@
   z-index: 2;
 }
 
+.introduction .introduction-text p {
+  margin: 24px 0;
+}
+
 .introduction::after {
   z-index: 1;
   content: "";
