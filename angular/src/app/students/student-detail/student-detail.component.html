@@ -2,18 +2,35 @@
 
   <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--9-col">
     <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">{{student.attributes.field_first_name}} {{student.attributes.name}}</h2>
+      <h2 class="mdl-card__title-text">Edit this Student</h2>
     </div>
     <div class="mdl-card__supporting-text">
-      <ul class="demo-list-two mdl-list">
 
-        <li class="mdl-list__item" *ngFor="let course of courses">
-          <span class="mdl-list__item-primary-content">
-            {{course.attributes.name}}
-          </span>
-        </li>
+      <form style="display:flex;flex-direction:column;">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="firstname" value={{student.attributes.field_first_name}}>
+          <label class="mdl-textfield__label" for="firstname">First Name</label>
+          <span class="mdl-textfield__error">Letters and spaces only</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="lastname" value={{student.attributes.name}}>
+          <label class="mdl-textfield__label" for="lastname">Last Name</label>
+        </div>
 
-      </ul>
+        <p>
+          <label *ngFor="let course of courses" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="{{course.id}}">
+            <input type="checkbox" id="{{course.id}}" class="mdl-switch__input" checked>
+            <span class="mdl-switch__label">{{course.attributes.name}}</span>
+          </label>
+        </p>
+
+        <p>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+            Update
+          </button>
+        </p>
+      </form>
+
     </div>
     <div class="mdl-card__actions mdl-card--border">
       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" routerLink="/students">All students</a>
