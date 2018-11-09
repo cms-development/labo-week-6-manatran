@@ -28,8 +28,8 @@ export class OverviewComponent implements OnInit {
       const res = await this.overviewService.getCourses<JsonObject>();
       this.courses = res.data;
       console.log(this.courses);
-    } catch ( error ) {
-      console.error( error );
+    } catch (error) {
+      console.error(error);
     }
   }
 
@@ -38,8 +38,8 @@ export class OverviewComponent implements OnInit {
       const res = await this.overviewService.getLecturers<JsonObject>();
       this.lecturers = res.data;
       console.log(this.lecturers);
-    } catch ( error ) {
-      console.error( error );
+    } catch (error) {
+      console.error(error);
     }
   }
 
@@ -48,8 +48,8 @@ export class OverviewComponent implements OnInit {
       const res = await this.overviewService.getStudents<JsonObject>();
       this.students = res.data;
       console.log(this.students);
-    } catch ( error ) {
-      console.error( error );
+    } catch (error) {
+      console.error(error);
     }
   }
 

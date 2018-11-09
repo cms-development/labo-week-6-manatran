@@ -22,8 +22,8 @@ export class LecturersComponent implements OnInit {
       const res = await this.lecturerService.getLecturers<JsonObject>();
       this.lecturers = res.data;
       console.log(this.lecturers);
-    } catch ( error ) {
-      console.error( error );
+    } catch (error) {
+      console.error(error);
     }
   }
 }

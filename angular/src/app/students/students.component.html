@@ -5,6 +5,15 @@
       <h2 class="mdl-card__title-text">Students</h2>
     </div>
     <div class="mdl-card__supporting-text">
+      <form style="display:flex;flex-direction:row;justify-content:space-around;">
+        <mdl-textfield type="text" label="First Name" floating-label #firstname></mdl-textfield>
+        <mdl-textfield type="text" label="Last Name" floating-label #name></mdl-textfield>
+        <p>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="createStudent(firstname, name)">
+            Create
+          </button>
+        </p>
+      </form>
       <ul class="mdl-list">
 
         <li class="mdl-list__item" *ngFor="let student of students">
@@ -15,7 +24,8 @@
           <span class="mdl-list__item-secondary-content">
             <a class="mdl-list__item-secondary-action" routerLink="/students/{{student.id}}"><i class="material-icons">edit</i></a>
           </span>
-          <button style="margin-left: 32px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="deleteStudent(student.id)">
+          <button style="margin-left: 32px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+            (click)="deleteStudent(student.id)">
             Delete
           </button>
         </li>
