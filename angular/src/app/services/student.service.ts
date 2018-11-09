@@ -34,6 +34,19 @@ export class StudentService {
     }
   }
 
+  public async deleteStudent<T>(id: string): Promise<T> {
+    try {
+      const res = await axios.request<T>({
+        method: 'delete',
+        url: `${this.fetchURL}/${id}`
+      });
+      return res.data;
+    } catch (error) {
+      return Promise.reject(this.handleError(error));
+    }
+  }
+
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

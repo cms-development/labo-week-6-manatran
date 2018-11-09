@@ -7,21 +7,11 @@
     <div class="mdl-card__supporting-text">
 
       <form style="display:flex;flex-direction:column;">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="firstname" value={{student.attributes.field_first_name}}>
-          <label class="mdl-textfield__label" for="firstname">First Name</label>
-          <span class="mdl-textfield__error">Letters and spaces only</span>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="lastname" value={{student.attributes.name}}>
-          <label class="mdl-textfield__label" for="lastname">Last Name</label>
-        </div>
+        <mdl-textfield type="text" label="First Name" value={{student.attributes.field_first_name}} floating-label></mdl-textfield>
+        <mdl-textfield type="text" label="Last Name" value={{student.attributes.name}} floating-label></mdl-textfield>
 
-        <p>
-          <label *ngFor="let course of courses" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="{{course.id}}">
-            <input type="checkbox" id="{{course.id}}" class="mdl-switch__input" checked>
-            <span class="mdl-switch__label">{{course.attributes.name}}</span>
-          </label>
+        <p *ngFor="let course of courses">
+          <mdl-switch mdl-ripple>{{course.attributes.name}}</mdl-switch>
         </p>
 
         <p>
@@ -36,5 +26,5 @@
       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" routerLink="/students">All students</a>
     </div>
   </div>
-
+  <script src="./../../../assets/mdl.js"></script>
 </section>

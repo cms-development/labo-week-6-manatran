@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MdlModule } from '@angular-mdl/core';
 
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
@@ -26,7 +27,8 @@ import { LecturerDetailComponent } from './lecturers/lecturer-detail/lecturer-de
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MdlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
