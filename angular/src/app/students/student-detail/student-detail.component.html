@@ -7,15 +7,16 @@
     <div class="mdl-card__supporting-text">
 
       <form style="display:flex;flex-direction:column;">
-        <mdl-textfield type="text" label="First Name" value={{student.attributes.field_first_name}} floating-label></mdl-textfield>
-        <mdl-textfield type="text" label="Last Name" value={{student.attributes.name}} floating-label></mdl-textfield>
+        <mdl-textfield type="text" label="First Name" #firstname value={{student.attributes.field_first_name}}
+          floating-label></mdl-textfield>
+        <mdl-textfield type="text" label="Last Name" #name value={{student.attributes.name}} floating-label></mdl-textfield>
 
         <p *ngFor="let course of courses">
           <mdl-switch mdl-ripple>{{course.attributes.name}}</mdl-switch>
         </p>
 
         <p>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="updateStudent(firstname, name)">
             Update
           </button>
         </p>

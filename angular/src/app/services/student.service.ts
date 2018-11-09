@@ -34,16 +34,29 @@ export class StudentService {
     }
   }
 
+  public async updateStudent<T>(id: string, body: Object): Promise<T> {
+    try {
+      const res = await axios.request<T>({
+        method: 'patch',
+        url: `${this.fetchURL}/${id}`,
+        data: body
+      });
+      return res.data;
+    } catch (error) {
+      return Promise.reject(this.handleError(error));
+    }
+  }
+
   public async createStudent<T>(body: Object): Promise<T> {
     try {
-        const res = await axios.request<T>({
-            method: 'post',
-            url: this.fetchURL,
-            data: body
-        });
-        return res.data;
+      const res = await axios.request<T>({
+        method: 'post',
+        url: this.fetchURL,
+        data: body
+      });
+      return res.data;
     } catch (error) {
-        return Promise.reject(this.handleError(error));
+      return Promise.reject(this.handleError(error));
     }
   }
 
@@ -58,7 +71,6 @@ export class StudentService {
       return Promise.reject(this.handleError(error));
     }
   }
-
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
